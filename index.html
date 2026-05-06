@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dooday - macOS 메뉴바 일정 도우미</title>
+    <meta name="description" content="Dooday는 오늘의 캘린더, Jira, 메일을 메뉴바에서 한 번에 확인하는 macOS 앱입니다.">
+    <meta property="og:title" content="Dooday">
+    <meta property="og:description" content="오늘의 캘린더, Jira, 메일을 메뉴바에서 한 번에 확인하세요.">
+    <meta property="og:image" content="assets/dooday-icon.png">
+    <link rel="icon" href="assets/dooday-icon.png">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header" aria-label="상단 메뉴">
+      <a class="brand" href="#top" aria-label="Dooday 홈">
+        <img src="assets/dooday-icon.png" alt="" width="40" height="40">
+        <span>Dooday</span>
+      </a>
+      <nav>
+        <a href="#features">기능</a>
+        <a href="#privacy">개인정보</a>
+        <a href="#download">다운로드</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">macOS menu bar app</p>
+          <h1>Dooday</h1>
+          <p class="lead">
+            오늘의 캘린더, Jira 업무, 메일을 메뉴바에서 빠르게 확인하는 작은 업무 대시보드입니다.
+            회의와 할 일을 앱 전환 없이 한 화면에서 훑어보세요.
+          </p>
+          <div class="hero-actions" id="download">
+            <button class="download-button" type="button" data-open-payment>
+              Dooday 다운로드
+            </button>
+            <p class="price-note">macOS 14 이상, 내부 배포용 pkg 제공</p>
+          </div>
+        </div>
+
+        <figure class="screenshot-preview">
+          <img
+            src="assets/dooday-screenshot.svg"
+            alt="Dooday 메뉴바 캘린더와 오늘 미팅 목록 화면"
+            width="502"
+            height="694"
+          >
+        </figure>
+      </section>
+
+      <section class="section" id="features">
+        <div class="section-heading">
+          <p class="eyebrow">작게 열고 빠르게 확인</p>
+          <h2>오늘 필요한 정보만 한 곳에</h2>
+        </div>
+        <div class="feature-grid">
+          <article>
+            <h3>캘린더</h3>
+            <p>macOS 캘린더 권한으로 오늘의 회의와 일정을 불러옵니다.</p>
+          </article>
+          <article>
+            <h3>Jira</h3>
+            <p>할당된 업무와 상태를 확인하고, 필요한 항목으로 바로 이동합니다.</p>
+          </article>
+          <article>
+            <h3>Mail</h3>
+            <p>Apple Mail에 연결된 계정의 읽지 않은 메일을 간단히 훑어봅니다.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section split" id="privacy">
+        <div>
+          <p class="eyebrow">local first</p>
+          <h2>개인 데이터는 macOS 권한 안에서</h2>
+        </div>
+        <p>
+          Dooday는 캘린더와 메일을 별도 외부 API 대신 macOS 로컬 권한으로 읽습니다.
+          Jira 연동만 OAuth 서버를 사용하며, 설정과 토큰은 현재 MVP 기준 로컬 환경에 저장됩니다.
+        </p>
+      </section>
+
+      <section class="download-band">
+        <div>
+          <p class="eyebrow">internal package</p>
+          <h2>Dooday.pkg로 설치</h2>
+          <p>버튼을 누르면 입금 안내를 확인한 뒤 GitHub Pages에서 pkg 파일 다운로드가 시작됩니다.</p>
+        </div>
+        <button class="secondary-download" type="button" data-open-payment>
+          다운로드
+        </button>
+      </section>
+    </main>
+
+    <dialog class="payment-dialog" aria-labelledby="payment-title">
+      <form method="dialog">
+        <button class="close-button" value="cancel" aria-label="닫기">x</button>
+        <p class="eyebrow">무인 판매 안내</p>
+        <h2 id="payment-title">무인 판매와 같은 방식입니다</h2>
+        <p>
+          아래 계좌로 3,000원을 입금한 뒤 확인을 누르면 Dooday.pkg 다운로드가 시작됩니다.
+        </p>
+        <dl class="payment-details">
+          <div>
+            <dt>은행</dt>
+            <dd>카카오뱅크</dd>
+          </div>
+          <div>
+            <dt>예금주</dt>
+            <dd>임두희</dd>
+          </div>
+          <div>
+            <dt>계좌번호</dt>
+            <dd>3333-01-1550094</dd>
+          </div>
+          <div>
+            <dt>금액</dt>
+            <dd>3,000원</dd>
+          </div>
+        </dl>
+        <div class="dialog-actions">
+          <button class="ghost-button" value="cancel">취소</button>
+          <a class="confirm-download" href="downloads/Dooday.pkg" download>
+            확인하고 pkg 다운로드
+          </a>
+        </div>
+      </form>
+    </dialog>
+
+    <script src="site.js"></script>
+  </body>
+</html>

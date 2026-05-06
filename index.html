@@ -34,10 +34,10 @@
             회의와 할 일을 앱 전환 없이 한 화면에서 훑어보세요.
           </p>
           <div class="hero-actions" id="download">
-            <a class="download-button" href="downloads/Dooday.pkg" download>
-              Dooday v1 다운로드
-            </a>
-            <p class="price-note">macOS 14 이상, pkg 설치 파일 제공</p>
+            <button class="download-button" type="button" data-open-payment>
+              Dooday 다운로드
+            </button>
+            <p class="price-note">macOS 14 이상, 내부 배포용 pkg 제공</p>
           </div>
         </div>
 
@@ -79,20 +79,57 @@
         </div>
         <p>
           Dooday는 캘린더와 메일을 별도 외부 API 대신 macOS 로컬 권한으로 읽습니다.
-          Jira 연동만 OAuth 서버를 사용하며, 설정과 토큰은 현재 v1 기준 로컬 환경에 저장됩니다.
+          Jira 연동만 OAuth 서버를 사용하며, 설정과 토큰은 현재 MVP 기준 로컬 환경에 저장됩니다.
         </p>
       </section>
 
       <section class="download-band">
         <div>
-          <p class="eyebrow">public package</p>
+          <p class="eyebrow">internal package</p>
           <h2>Dooday.pkg로 설치</h2>
-          <p>GitHub Pages에서 최신 v1 pkg 파일을 바로 내려받을 수 있습니다.</p>
+          <p>버튼을 누르면 입금 안내를 확인한 뒤 GitHub Pages에서 pkg 파일 다운로드가 시작됩니다.</p>
         </div>
-        <a class="secondary-download" href="downloads/Dooday.pkg" download>
+        <button class="secondary-download" type="button" data-open-payment>
           다운로드
-        </a>
+        </button>
       </section>
     </main>
+
+    <dialog class="payment-dialog" aria-labelledby="payment-title">
+      <form method="dialog">
+        <button class="close-button" value="cancel" aria-label="닫기">x</button>
+        <p class="eyebrow">무인 판매 안내</p>
+        <h2 id="payment-title">무인 판매와 같은 방식입니다</h2>
+        <p>
+          아래 계좌로 3,000원을 입금한 뒤 확인을 누르면 Dooday.pkg 다운로드가 시작됩니다.
+        </p>
+        <dl class="payment-details">
+          <div>
+            <dt>은행</dt>
+            <dd>카카오뱅크</dd>
+          </div>
+          <div>
+            <dt>예금주</dt>
+            <dd>임두희</dd>
+          </div>
+          <div>
+            <dt>계좌번호</dt>
+            <dd>3333-01-1550094</dd>
+          </div>
+          <div>
+            <dt>금액</dt>
+            <dd>3,000원</dd>
+          </div>
+        </dl>
+        <div class="dialog-actions">
+          <button class="ghost-button" value="cancel">취소</button>
+          <a class="confirm-download" href="downloads/Dooday.pkg" download>
+            확인하고 pkg 다운로드
+          </a>
+        </div>
+      </form>
+    </dialog>
+
+    <script src="site.js"></script>
   </body>
 </html>
